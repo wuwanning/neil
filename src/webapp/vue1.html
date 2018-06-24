@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="./static/js/vue.js"></script>
+</head>
+
+	<div id="app">
+	   {{name}}
+	   <button v-on:click="say">按钮</button>
+	</div>
+<body>
+
+</body>
+	<script>
+		var vm = new Vue({
+			el:'#app',
+			data:{
+				name:'miku世界第一公主殿下'
+			},
+			methods:{
+				say:function(){
+					alert("谁是世界上最可爱的人？"+this.name)
+				}
+			}
+			
+		});
+	</script>
+</html>
