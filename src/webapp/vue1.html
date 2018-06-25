@@ -9,6 +9,8 @@
 	<div id="app">
 	   {{name}}
 	   <button v-on:click="say">按钮</button>
+	   
+	   <h1 v-if="isShow">v-if判断是否显示</h1><button v-on:click="change">隐藏或显示</button>
 	</div>
 <body>
 
@@ -17,11 +19,20 @@
 		var vm = new Vue({
 			el:'#app',
 			data:{
-				name:'miku世界第一公主殿下'
+				name:'miku世界第一公主殿下',
+				isShow:false
 			},
 			methods:{
 				say:function(){
 					alert("谁是世界上最可爱的人？"+this.name)
+				},
+				change:function(){
+					this.isShow = !this.isShow
+					/* if(this.isShow){
+						this.isShow = false						
+					}else{
+						this.isShow = true	
+					} */
 				}
 			}
 			
