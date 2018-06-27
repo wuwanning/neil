@@ -8,9 +8,16 @@
 
 	<div id="app">
 	   {{name}}
-	   <button v-on:click="say">按钮</button>
+	   <button v-on:click="say">按钮</button><br/>
 	   
-	   <h1 v-if="isShow">v-if判断是否显示</h1><button v-on:click="change">隐藏或显示</button>
+	   <h1 v-if="isIf">v-if判断是否显示</h1><button v-on:click="changeIf">隐藏或显示</button><br/>
+	   <h1 v-show="isShow">v-show判断是否显示</h1><br/><button v-on:click="changeShow">隐藏或显示</button><br/>
+	   
+	  	<span v-if="type == 'A'">A</span>
+	    <span v-else-if="type == 'B'">B</span>
+	    <span v-else>既不是a也不是b</span><br/>
+	   <span v-text="msg"></span><br/>
+	   <span v-html="msg"></span>
 	</div>
 <body>
 
@@ -20,14 +27,25 @@
 			el:'#app',
 			data:{
 				name:'miku世界第一公主殿下',
-				isShow:false
+				isShow:false,
+				isIf:false,
+				type:"A",
+				msg:"<h1>miku卡哇伊</h1>" 
 			},
 			methods:{
 				say:function(){
 					alert("谁是世界上最可爱的人？"+this.name)
 				},
-				change:function(){
-					this.isShow = !this.isShow
+				changeIf:function(){
+					this.isIf = !this.isIf;
+					/* if(this.isShow){
+						this.isShow = false						
+					}else{
+						this.isShow = true	
+					} */
+				},
+				changeShow:function(){
+					this.isShow = !this.isShow;
 					/* if(this.isShow){
 						this.isShow = false						
 					}else{
