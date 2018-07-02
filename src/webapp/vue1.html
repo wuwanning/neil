@@ -20,7 +20,13 @@
 	   <span v-html="msg"></span>
 	</div>
 <body>
-
+<!-- 配置数据源 -->
+	<bean id="dataSource"
+		class="com.alibaba.druid.pool.DruidDataSource">
+		<property name="url" value="jdbc:mysql://localhost:3306/db_book?useUnicode=true&amp;characterEncoding=UTF-8"/>
+		<property name="username" value="root"/>
+		<property name="password" value="520520"/>
+	</bean>
 </body>
 	<script>
 		var vm = new Vue({
